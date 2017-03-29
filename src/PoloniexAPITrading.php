@@ -2,7 +2,6 @@
 
 namespace poloniex\api;
 
-use poloniex\api\PoloniexAPIConf;
 use poloniex\api\tools\Request;
 
 /**
@@ -243,7 +242,7 @@ class PoloniexAPITrading {
     /**
      * Cancels an order you have placed in a given market. Required POST parameter
      * is "orderNumber".
-     * If successful, the method will return: {"success":1}
+     * If successful, the method will return: {"success":1}.
      *
      * @param string $orderNumber Order number.
      *
