@@ -3,6 +3,7 @@
     "description": "PHP wrapper for the Poloniex API.",
     "type": "library",
     "keywords": ["poloniex", "api"],
+    "homepage": "https://github.com/dzarezenko/poloniex-api",
     "license": "MIT",
     "authors": [
         {
