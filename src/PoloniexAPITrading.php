@@ -107,8 +107,8 @@ class PoloniexAPITrading {
      * the "start" and "end" POST parameters, both of which should be given as
      * UNIX timestamps.
      *
-     * @param integer $start Start timestamp.
-     * @param integer $end End timestamp.
+     * @param int $start Start timestamp.
+     * @param int $end End timestamp.
      *
      * @return json
      */
@@ -144,8 +144,8 @@ class PoloniexAPITrading {
      * if you do not specify a range, it will be limited to one day.
      *
      * @param type $currencyPair
-     * @param integer $start Start timestamp.
-     * @param integer $end End timestamp.
+     * @param int $start Start timestamp.
+     * @param int $end End timestamp.
      *
      * @return json
      */
@@ -501,8 +501,8 @@ class PoloniexAPITrading {
      *
      * @param string $currency In the 'BTC_NXT' format.
      * @param float $amount Offer amount.
-     * @param integer $duration Offer days.
-     * @param integer $autoRenew Auto-renew flag.
+     * @param int $duration Offer days.
+     * @param int $autoRenew Auto-renew flag.
      * @param float $lendingRate Offer lending rate.
      *
      * @return json
@@ -559,9 +559,9 @@ class PoloniexAPITrading {
      * and "end" POST parameters as UNIX timestamps.
      * "limit" may also be specified to limit the number of rows returned.
      *
-     * @param integer $start Start timestamp.
-     * @param integer $end End timestamp.
-     * @param integer $limit Limit the number of rows returned.
+     * @param int $start Start timestamp.
+     * @param int $end End timestamp.
+     * @param int $limit Limit the number of rows returned.
      *
      * @return json
      */

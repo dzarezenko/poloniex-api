@@ -2,7 +2,6 @@
 
 namespace poloniex\api;
 
-use poloniex\api\PoloniexAPIConf;
 use poloniex\api\tools\Request;
 
 /**
@@ -56,7 +55,7 @@ class PoloniexAPIPublic {
      * all markets.
      *
      * @param string $currencyPair In the 'BTC_NXT' format or 'all'.
-     * @param integer $depth Depth.
+     * @param int $depth Depth.
      *
      * @return json
      */

@@ -2,8 +2,6 @@
 
 namespace poloniex\api;
 
-use poloniex\api\PoloniexAPIPublic;
-
 /**
  * Poloniex API Wrapper.
  *
