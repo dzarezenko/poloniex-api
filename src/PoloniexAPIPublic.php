@@ -75,9 +75,9 @@ class PoloniexAPIPublic {
      * between a range specified in UNIX timestamps by the "start" and "end" GET
      * parameters.
      *
-     * @param type $currencyPair In the 'BTC_NXT' format.
-     * @param type $start Start timestamp.
-     * @param type $end End timestamp.
+     * @param string $currencyPair In the 'BTC_NXT' format.
+     * @param int $start Start timestamp.
+     * @param int $end End timestamp.
      *
      * @return json
      */
@@ -94,11 +94,11 @@ class PoloniexAPIPublic {
      * "Start" and "end" are given in UNIX timestamp format and used to specify the
      * date range for the data returned.
      *
-     * @param type $currencyPair In the 'BTC_NXT' format.
-     * @param type $period Candlestick period in seconds:
+     * @param string $currencyPair In the 'BTC_NXT' format.
+     * @param int $period Candlestick period in seconds:
      *           valid values are 300, 900, 1800, 7200, 14400, and 86400.
-     * @param type $start Start time in the UNIX timestamp format.
-     * @param type $end End time in UNIX timestamp format.
+     * @param int $start Start time in the UNIX timestamp format.
+     * @param int $end End time in UNIX timestamp format.
      *
      * @return json
      */
