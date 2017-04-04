@@ -30,6 +30,23 @@ class Poloniex extends PoloniexAPITrading {
     private $depositAddresses = null;
 
     /**
+     * Initiates Poloniex API functionality. If API keys are not provided
+     * then only public API methods will be available.
+     *
+     * @param string $apiKey Poloniex API key.
+     * @param string $apiSecret Poloniex API secret.
+     *
+     * @return
+     */
+    public function __construct($apiKey = null, $apiSecret = null) {
+        if (is_null($apiKey) || is_null($apiSecret)) {
+            return;
+        }
+
+        return parent::__construct($apiKey, $apiSecret);
+    }
+
+    /**
      * Returns the ticker for all markets.
      *
      * @return json
