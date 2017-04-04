@@ -14,9 +14,19 @@ namespace poloniex\api;
  */
 class Poloniex extends PoloniexAPITrading {
 
+    /**
+     * @var array Available balances list.
+     */
     private $balances = null;
+
+    /**
+     * @var array Full balances information.
+     */
     private $completeBalances = null;
 
+    /**
+     * @var array All deposit addresses list.
+     */
     private $depositAddresses = null;
 
     /**
