@@ -188,4 +188,28 @@ class Poloniex extends PoloniexAPITrading {
         return $this->depositAddresses;
     }
 
+    /**
+     * Returns estimated BTC rate value in USD.
+     *
+     * @return float
+     */
+    public static function getEstimatedBTCRate() {
+        $orderBook = PoloniexAPIPublic::returnOrderBook("USDT_BTC");
+
+        $rate = 0.0;
+        $n = 0;
+        foreach ($orderBook as $k => $orders) {
+            if (empty($orders) || !is_array($orders)) {
+                continue;
+            }
+
+            foreach ($orders as $order) {
+                $rate = ($rate * $n + (float)$order[0]) / (float)($n + 1);
+                $n++;
+            }
+        }
+
+        return $rate;
+    }
+
 }
