@@ -189,6 +189,37 @@ class Poloniex extends PoloniexAPITrading {
     }
 
     /**
+     * Returns open orders list.
+     *
+     * @param string $currencyPair In the 'BTC_LTC' format. If no currency pair
+     *           provided - all orders will be returned.
+     *
+     * @return array
+     */
+    public function getOpenOrders($currencyPair = null) {
+        $openOrders = $this->returnOpenOrders();
+        $actualOrders = [];
+        foreach ($openOrders as $pair => $orders) {
+            if (empty($orders)) {
+                continue;
+            }
+
+            if ($currencyPair) {
+                if ($pair != $currencyPair) {
+                    continue;
+                }
+
+                $actualOrders = $orders;
+                break;
+            }
+
+            $actualOrders[$pair] = $orders;
+        }
+
+        return $actualOrders;
+    }
+
+    /**
      * Returns estimated BTC rate value in USD.
      *
      * @return float
