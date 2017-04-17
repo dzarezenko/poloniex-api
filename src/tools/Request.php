@@ -14,7 +14,18 @@ namespace poloniex\api\tools;
  */
 class Request {
 
+    /**
+     * Poloniex API Key value.
+     *
+     * @var type
+     */
     private $apiKey = "";
+
+    /**
+     * Poloniex API Secret value.
+     *
+     * @var type
+     */
     private $apiSecret = "";
 
     /**
@@ -29,6 +40,14 @@ class Request {
         $this->apiSecret = $apiSecret;
     }
 
+    /**
+     * Executes curl request to the Poloniex API.
+     *
+     * @param array $req Request parameters list.
+     *
+     * @return array JSON data.
+     * @throws \Exception If Curl error or Poloniex API error occurred.
+     */
     public function exec(array $req = []) {
         usleep(1000000);
 
@@ -74,6 +93,13 @@ class Request {
         return $json;
     }
 
+    /**
+     * Executes simple GET request to the Poloniex public API.
+     *
+     * @param string $url API method URL.
+     *
+     * @return array JSON data.
+     */
     public static function json($url) {
         $opts = [
             'http' => [
