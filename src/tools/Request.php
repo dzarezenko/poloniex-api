@@ -17,6 +17,13 @@ class Request {
     private $apiKey = "";
     private $apiSecret = "";
 
+    /**
+     * cURL handle.
+     *
+     * @var resource
+     */
+    private static $ch = null;
+
     public function __construct($apiKey, $apiSecret) {
         $this->apiKey = $apiKey;
         $this->apiSecret = $apiSecret;
@@ -42,25 +49,24 @@ class Request {
         ];
 
         // curl handle (initialize if required)
-        static $ch = null;
-        if (is_null($ch)) {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        if (is_null(self::$ch)) {
+            self::$ch = curl_init();
+            curl_setopt(self::$ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt(
-                $ch,
+                self::$ch,
                 CURLOPT_USERAGENT,
                 'Mozilla/4.0 (compatible; Poloniex PHP API; ' . php_uname('a') . '; PHP/' . phpversion() . ')'
             );
         }
-        curl_setopt($ch, CURLOPT_URL, \poloniex\api\PoloniexAPIConf::URL_TRADING);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt(self::$ch, CURLOPT_URL, \poloniex\api\PoloniexAPIConf::URL_TRADING);
+        curl_setopt(self::$ch, CURLOPT_POSTFIELDS, $post_data);
+        curl_setopt(self::$ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt(self::$ch, CURLOPT_SSL_VERIFYPEER, false);
 
         // run the query
-        $res = curl_exec($ch);
+        $res = curl_exec(self::$ch);
         if ($res === false) {
-            throw new \Exception('Curl error: ' . curl_error($ch));
+            throw new \Exception("Curl error: " . curl_error(self::$ch));
         }
 
         $json = json_decode($res, true);
