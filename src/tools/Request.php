@@ -58,8 +58,8 @@ class Request {
         $req['nonce'] = $mt[1] . substr($mt[0], 2, 6);
 
         // generate the POST data string
-        $post_data = http_build_query($req, '', '&');
-        $sign = hash_hmac('sha512', $post_data, $secret);
+        $postData = http_build_query($req, '', '&');
+        $sign = hash_hmac('sha512', $postData, $secret);
 
         // generate the extra headers
         $headers = [
@@ -78,7 +78,7 @@ class Request {
             );
         }
         curl_setopt(self::$ch, CURLOPT_URL, \poloniex\api\PoloniexAPIConf::URL_TRADING);
-        curl_setopt(self::$ch, CURLOPT_POSTFIELDS, $post_data);
+        curl_setopt(self::$ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt(self::$ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt(self::$ch, CURLOPT_SSL_VERIFYPEER, false);
 
