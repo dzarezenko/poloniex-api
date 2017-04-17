@@ -28,3 +28,7 @@ To install Open Data APIs Aggregator package you can use simple `composer.json`.
 Usage
 -----
 You can find usage examples in the `examples/` folder.
+
+Donate
+-----
+You can support this project by continuously donations to BTC wallet: `1DKLUPCWoLFje7RBWVpDZk1tXjyRKHFkQw`
