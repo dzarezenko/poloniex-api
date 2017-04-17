@@ -243,4 +243,22 @@ class Poloniex extends PoloniexAPITrading {
         return $rate;
     }
 
+    /**
+     * Returns ticker based BTC rate value in USD.
+     *
+     * @return float
+     */
+    public static function getTickerBTCRate() {
+        $ticker = PoloniexAPIPublic::returnTicker();
+        if (empty($ticker) || !is_array($ticker)) {
+            return null;
+        }
+
+        if (!isset($ticker['USDT_BTC'])) {
+            return null;
+        }
+
+        return $ticker['USDT_BTC']['last'];
+    }
+
 }
