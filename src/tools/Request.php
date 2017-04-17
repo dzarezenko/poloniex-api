@@ -90,6 +90,11 @@ class Request {
 
         $json = json_decode($res, true);
 
+        // Check for the Poloniex API error
+        if (isset($json['error'])) {
+            throw new \Exception("Poloniex API error: {$json['error']}");
+        }
+
         return $json;
     }
 
