@@ -66,7 +66,7 @@ class PoloniexAPITrading {
             'command' => 'returnCompleteBalances'
         ];
 
-        if (!is_null($account) && (in_array($account, PoloniexAPIConf::$accounts) || $account === "all")) {
+        if (!is_null($account) && (in_array($account, PoloniexAPIConf::$accounts) || $account === PoloniexAPIConf::ACCOUNT_ALL)) {
             $params['account'] = $account;
         }
 

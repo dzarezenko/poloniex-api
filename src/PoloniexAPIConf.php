@@ -17,6 +17,7 @@ class PoloniexAPIConf {
     const URL_PUBLIC  = "https://poloniex.com/public";
     const URL_TRADING = "https://poloniex.com/tradingApi";
 
+    const ACCOUNT_ALL = 'all';
     const ACCOUNT_EXCHANGE = 'exchange';
     const ACCOUNT_MARGIN = 'margin';
     const ACCOUNT_LENDING = 'lending';
