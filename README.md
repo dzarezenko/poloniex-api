@@ -9,7 +9,7 @@ PHP wrapper for the Poloniex API
 
 Requirements
 ------------
-The minimum requirement by Open Data APIs Aggregator is that your Web server supports PHP 5.4.
+The minimum requirement by Poloniex API is that your Web server supports PHP 5.4.
 
 Installation
 ------------
