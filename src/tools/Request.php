@@ -49,7 +49,7 @@ class Request {
      * @throws \Exception If Curl error or Poloniex API error occurred.
      */
     public function exec(array $req = []) {
-        usleep(1000000);
+        usleep(200000);
 
         // API settings
         $key = $this->apiKey;
