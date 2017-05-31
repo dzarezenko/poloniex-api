@@ -194,10 +194,15 @@ class Poloniex extends PoloniexAPITrading {
      * @param string $currencyPair In the 'BTC_LTC' format. If no currency pair
      *           provided - all orders will be returned.
      *
-     * @return array
+     * @return array Open orders list.
+     * @throws \Exception If some Poloniex API error occurred.
      */
     public function getOpenOrders($currencyPair = null) {
         $openOrders = $this->returnOpenOrders();
+        if (!is_array($openOrders)) {
+            throw new \Exception("Invalid Poloniex API response");
+        }
+
         $actualOrders = [];
         foreach ($openOrders as $pair => $orders) {
             if (empty($orders)) {
