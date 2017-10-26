@@ -85,8 +85,12 @@ class Request {
         // run the query
         $res = curl_exec(self::$ch);
         if ($res === false) {
-            throw new \Exception("Curl error: " . curl_error(self::$ch));
+            $e = curl_error(self::$ch);
+            curl_close(self::$ch);
+
+            throw new \Exception("Curl error: " . $e);
         }
+        curl_close(self::$ch);
 
         $json = json_decode($res, true);
 
