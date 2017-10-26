@@ -143,7 +143,7 @@ class Poloniex extends PoloniexAPITrading {
      *
      * @return json
      */
-    public function returnLoanOrders($currency = null) {
+    public function returnLoanOrders($currency) {
         return PoloniexAPIPublic::returnLoanOrders($currency);
     }
 

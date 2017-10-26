@@ -128,11 +128,9 @@ class PoloniexAPIPublic {
      *
      * @return json
      */
-    public static function returnLoanOrders($currency = null) {
-        $request = PoloniexAPIConf::URL_PUBLIC . '?command=returnLoanOrders';
-        if ($currency) {
-            $request.= "&currency={$currency}";
-        }
+    public static function returnLoanOrders($currency) {
+        $request = PoloniexAPIConf::URL_PUBLIC . '?command=returnLoanOrders'
+                 . "&currency={$currency}";
 
         return Request::json($request);
     }
