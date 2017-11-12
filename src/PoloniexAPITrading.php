@@ -142,13 +142,13 @@ class PoloniexAPITrading {
      * "start" and/or "end" POST parameters, given in UNIX timestamp format;
      * if you do not specify a range, it will be limited to one day.
      *
-     * @param type $currencyPair
+     * @param string $currencyPair
      * @param int $start Start timestamp.
      * @param int $end End timestamp.
      *
      * @return json
      */
-    public function returnTradeHistory($currencyPair = "all", $start = null, $end = null) {
+    public function returnTradeHistory($currencyPair = "all", $start = null, $end = null, $limit = null) {
         $request = [
             'command' => 'returnTradeHistory',
             'currencyPair' => strtoupper($currencyPair)
@@ -157,6 +157,9 @@ class PoloniexAPITrading {
         if (!is_null($start) && !is_null($end) && $end > $start) {
             $request['start'] = $start;
             $request['end'] = $end;
+        }
+        if (!is_null($limit)) {
+            $request['limit'] = $limit;
         }
 
         return $this->request->exec($request);
