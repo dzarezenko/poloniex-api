@@ -145,8 +145,9 @@ class PoloniexAPITrading {
      * @param string $currencyPair
      * @param int $start Start timestamp.
      * @param int $end End timestamp.
+     * @param int $limit Limit the number of entries returned.
      *
-     * @return json
+     * @return array
      */
     public function returnTradeHistory($currencyPair = "all", $start = null, $end = null, $limit = null) {
         $request = [
