@@ -110,15 +110,22 @@ class Request {
      * @return array JSON data.
      */
     public static function json($url) {
-        $opts = [
-            'http' => [
-                'method' => 'GET',
-                'timeout' => 10
-            ]
-        ];
-        $context = stream_context_create($opts);
-        $feed = file_get_contents($url, false, $context);
-        $json = json_decode($feed, true);
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $output = curl_exec($ch);
+        if ($output === false) {
+            $e = curl_error($ch);
+            curl_close($ch);
+
+            throw new \Exception("Curl error: " . $e);
+        }
+
+        curl_close($ch);
+
+        $json = json_decode($output, true);
 
         return $json;
     }
