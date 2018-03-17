@@ -5,6 +5,7 @@ PHP wrapper for the Poloniex API
 [![License](https://poser.pugx.org/dzarezenko/poloniex-api/license)](https://packagist.org/packages/dzarezenko/poloniex-api)
 [![StyleCI](https://styleci.io/repos/86438595/shield)](https://styleci.io/repos/86438595)
 [![Code Climate](https://codeclimate.com/github/dzarezenko/poloniex-api/badges/gpa.svg)](https://codeclimate.com/github/dzarezenko/poloniex-api)
+<span class="badge-ehereum"><a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=0x8Ef300465FBf0f3867E85AC60D9faD9DC6a232d9" title="Donate once-off to this project using Ethereum"><img src="https://img.shields.io/badge/ethereum-donate-blue.svg" alt="Ethereum donate button" /></a></span>
 <span class="badge-bitcoin"><a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=1DKLUPCWoLFje7RBWVpDZk1tXjyRKHFkQw" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
 Requirements
