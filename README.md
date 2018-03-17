@@ -37,4 +37,6 @@ You can find usage examples in the `examples/` folder.
 
 Donate
 -----
-You can support this project by continuously donations to BTC wallet: `1DKLUPCWoLFje7RBWVpDZk1tXjyRKHFkQw`
+You can support this project by continuously donations to
+ * ETH wallet: `0x8Ef300465FBf0f3867E85AC60D9faD9DC6a232d9`
+ * BTC wallet: `1DKLUPCWoLFje7RBWVpDZk1tXjyRKHFkQw`
