@@ -183,6 +183,35 @@ class PoloniexAPITrading {
     }
 
     /**
+     * Returns the status of a given order, specified by the "orderNumber" POST
+     * parameter. If the specified orderNumber is not open, or it is not yours,
+     * you will receive an error.
+     * 
+     * Note that returnOrderStatus, in concert with returnOrderTrades, can be
+     * used to determine various status information about an order:
+     * 
+     * - If returnOrderStatus returns status: "Open", the order is fully open.
+     * - If returnOrderStatus returns status: "Partially filled", the order is
+     *   partially filled, and returnOrderTrades may be used to find the list
+     *   of those fills.
+     * - If returnOrderStatus returns an error and returnOrderTrades returns an
+     *   error, then the order was cancelled before it was filled
+     * - If returnOrderStatus returns an error and returnOrderTrades returns a
+     *   list of trades, then the order had fills and is no longer open (due
+     *   to being completely filled, or partially filled and then cancelled).
+     *
+     * @param string $orderNumber Order number.
+     *
+     * @return json
+     */
+    public function returnOrderStatus($orderNumber) {
+        return $this->request->exec([
+            'command' => 'returnOrderStatus',
+            'orderNumber' => $orderNumber
+        ]);
+    }
+
+    /**
      * Places a limit buy order in a given market. Required POST parameters are
      * "currencyPair", "rate", and "amount". If successful, the method will return
      * the order number.
