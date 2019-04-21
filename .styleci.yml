@@ -2,8 +2,6 @@ preset: none
 
 #risky: false
 
-linting: true
-
 enabled:
   #- align_double_arrow
   #- align_equals
