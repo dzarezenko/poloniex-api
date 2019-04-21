@@ -186,10 +186,10 @@ class PoloniexAPITrading {
      * Returns the status of a given order, specified by the "orderNumber" POST
      * parameter. If the specified orderNumber is not open, or it is not yours,
      * you will receive an error.
-     * 
+     *
      * Note that returnOrderStatus, in concert with returnOrderTrades, can be
      * used to determine various status information about an order:
-     * 
+     *
      * - If returnOrderStatus returns status: "Open", the order is fully open.
      * - If returnOrderStatus returns status: "Partially filled", the order is
      *   partially filled, and returnOrderTrades may be used to find the list
